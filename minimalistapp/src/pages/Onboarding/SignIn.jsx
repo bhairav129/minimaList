@@ -16,7 +16,7 @@ const SignIn = ({ setAuthenticatedUser }) => {
     const [cookies, setCookie, removeCookie] = useCookies(['session']);
     const navigate = useNavigate();
  
-    useEffect(() => {
+    useEffect(() => { // the second the page loads it will recover the session
         if(cookies.session)
             recoverSession()
         else 
@@ -24,12 +24,12 @@ const SignIn = ({ setAuthenticatedUser }) => {
     }, [])
 
     // supporting functions
-    const recoverSession = async () => {
+    const recoverSession = async () => { // if theyre already signed in it will take them to dashboard directly
         try {
             await verifySession(cookies.session);
             navigate('/dashboard', { replace: true });
         }
-        catch {
+        catch { // if the person is trying to use a fake cookie then it will delete the fake cookie and take them to sign in username page again
             removeCookie('session');
             navigate('/onboarding/signin/username', { replace: true })
         }
