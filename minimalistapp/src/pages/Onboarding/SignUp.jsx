@@ -13,7 +13,7 @@ const SignUp = () => {
     const [fieldNumber, setFieldNumber] = useState(0);
     const { hasTeam } = useParams();
     const [formInputs, saveInput] = useState([]);
-    const [cookies, setCookie, removeCookie] = useCookies(['session'])
+    const [cookies, setCookie, removeCookie] = useCookies(['session']) // use cookies stores session id
     const navigate = useNavigate();
 
     useEffect(() => {
