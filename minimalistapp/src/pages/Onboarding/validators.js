@@ -50,7 +50,7 @@ export const validationFunctions = {
             return true;
         }
     },
-    findPasswordStrength: (value) => {
+    findPasswordStrength: (value) => { //funn for finding password strength 
         var score = 0;
         var lowercase = 0, uppercase = 0, specials = 0, numbers = 0;
         for(let i = 0; i < value.length; i++) {
@@ -85,10 +85,10 @@ export const validationFunctions = {
 }
 
 const { 
-    nullValidation, 
-    lengthValidation, 
-    mailFormatValidation, 
-    usernameAvailableValidation, 
+    nullValidation, // pw shouldnt be zero
+    lengthValidation, // pw shouldnt be less than 8 chars
+    mailFormatValidation, // @mail.com
+    usernameAvailableValidation, // checks if username is available/ unique
     findPasswordStrength } = validationFunctions;
 
 export const inputValidators = [
