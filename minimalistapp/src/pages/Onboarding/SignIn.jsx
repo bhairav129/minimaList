@@ -35,7 +35,7 @@ const SignIn = ({ setAuthenticatedUser }) => {
         }
     }
 
-    const authenticateUser = async (data) => {
+    const authenticateUser = async (data) => { // its a form that takes username password and verifies if its true and it gets a session id from the api
         const url = process.env.REACT_APP_SERVER_URL.concat('/signin');
         try {
             const session = await fetch(url, {
