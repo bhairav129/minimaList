@@ -1,3 +1,6 @@
+
+// opens the page, removes the cookie and redirects you to home
+
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
@@ -14,7 +17,7 @@ const Logout = () => {
         else 
             navigate('/')
     }, [])
-
+// for removing cookie
     const logout = async () => {
         try {
             await deleteSession(cookies.session);
@@ -26,7 +29,7 @@ const Logout = () => {
             navigate('/')
         }
     }
-
+// deletes session
     const deleteSession = async (sessionID) => {
         const url = process.env.REACT_APP_SERVER_URL.concat('/deleteSession');
         fetch(url, {
