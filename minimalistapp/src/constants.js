@@ -231,6 +231,14 @@ export const teamcodeEmoji = [
     ],
 ]
 
+export const links = {
+    privacy: '/',
+    help: '/',
+    api: '/',
+    help: '/',
+    contact_us: '/',
+}
+
 export const generateTeamcode = () => {
     let code = ''
     let emoji = '';
